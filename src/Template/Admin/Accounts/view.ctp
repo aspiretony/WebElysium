@@ -1,10 +1,10 @@
 <section class="content-header">
   <h1>
-    <?php echo __('Account'); ?>
+    <?php echo __('Visualizar conta'); ?>
   </h1>
   <ol class="breadcrumb">
     <li>
-    <?= $this->Html->link('<i class="fa fa-dashboard"></i> ' . __('Back'), ['action' => 'index'], ['escape' => false])?>
+    <?= $this->Html->link('<i class="fa fa-dashboard"></i> ' . __('Voltar'), ['action' => 'index'], ['escape' => false])?>
     </li>
   </ol>
 </section>
@@ -16,12 +16,12 @@
         <div class="box box-solid">
             <div class="box-header with-border">
                 <i class="fa fa-info"></i>
-                <h3 class="box-title"><?php echo __('Information'); ?></h3>
+                <h3 class="box-title"><?php echo __('Informações Gerais'); ?></h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
                 <dl class="dl-horizontal">
-                                                                                                                <dt><?= __('Account') ?></dt>
+                                                                                                                <dt><?= __('Conta:') ?></dt>
                                         <dd>
                                             <?= h($account->account) ?>
                                         </dd>
@@ -29,65 +29,65 @@
                                         <dd>
                                             <?= h($account->email) ?>
                                         </dd>
-                                                                                                                                                            <dt><?= __('Pin') ?></dt>
+                                                                                                                                                            <dt><?= __('Pin:') ?></dt>
                                         <dd>
                                             <?= h($account->pin) ?>
                                         </dd>
-                                                                                                                                                            <dt><?= __('First Name') ?></dt>
+                                                                                                                                                            <dt><?= __('Nome:') ?></dt>
                                         <dd>
                                             <?= h($account->first_name) ?>
                                         </dd>
-                                                                                                                                                            <dt><?= __('Last Name') ?></dt>
+                                                                                                                                                            <dt><?= __('SobreNome:') ?></dt>
                                         <dd>
                                             <?= h($account->last_name) ?>
                                         </dd>
-                                                                                                                                                            <dt><?= __('Location') ?></dt>
+                                                                                                                                                            <dt><?= __('Localização:') ?></dt>
                                         <dd>
                                             <?= h($account->location) ?>
                                         </dd>
-                                                                                                                                                            <dt><?= __('Creator Ip') ?></dt>
+                                                                                                                                                            <dt><?= __('Ip do Criador:') ?></dt>
                                         <dd>
                                             <?= h($account->creator_ip) ?>
                                         </dd>
-                                                                                                                                                            <dt><?= __('Last Ip') ?></dt>
+                                                                                                                                                            <dt><?= __('Ultimo IP:') ?></dt>
                                         <dd>
                                             <?= h($account->last_ip) ?>
                                         </dd>
-                                                                                                                                                            <dt><?= __('Current Ip') ?></dt>
+                                                                                                                                                            <dt><?= __('IP Atual:') ?></dt>
                                         <dd>
                                             <?= h($account->current_ip) ?>
                                         </dd>
                                                                                                                                     
                                             
-                                                                                                                                                            <dt><?= __('Cash') ?></dt>
+                                                                                                                                                            <dt><?= __('Cash:') ?></dt>
                                 <dd>
                                     <?= $this->Number->format($account->cash) ?>
                                 </dd>
-                                                                                                                <dt><?= __('Access Level') ?></dt>
+                                                                                                                <dt><?= __('Nivel de Acesso:') ?></dt>
                                 <dd>
                                     <?= $this->Number->format($account->access_level) ?>
                                 </dd>
                                                                                                 
-                                                                                                        <dt><?= __('Date Created') ?></dt>
+                                                                                                        <dt><?= __('Data Criada:') ?></dt>
                                 <dd>
                                     <?= h($account->date_created) ?>
                                 </dd>
-                                                                                                                    <dt><?= __('Date Last Login') ?></dt>
+                                                                                                                    <dt><?= __('Data do Ultimo Login:') ?></dt>
                                 <dd>
                                     <?= h($account->date_last_login) ?>
                                 </dd>
                                                                                                     
-                                                                        <dt><?= __('Logged In') ?></dt>
+                                                                        <dt><?= __('Logado?:') ?></dt>
                             <dd>
-                            <?= $account->logged_in ? __('Yes') : __('No'); ?>
+                            <?= $account->logged_in ? __('Online') : __('Offline'); ?>
                             </dd>
-                                                    <dt><?= __('Active') ?></dt>
+                                                    <dt><?= __('Conta Ativa?:') ?></dt>
                             <dd>
-                            <?= $account->active ? __('Yes') : __('No'); ?>
+                            <?= $account->active ? __('Sim') : __('Não'); ?>
                             </dd>
-                                                    <dt><?= __('Pin Attempt') ?></dt>
+                                                    <dt><?= __('Tentativas de PIN') ?></dt>
                             <dd>
-                            <?= $account->pin_attempt ? __('Yes') : __('No'); ?>
+                            <?= ($account->pin_attempt); ?>
                             </dd>
                                                                     
                                     </dl>
@@ -105,7 +105,7 @@
             <div class="box">
                 <div class="box-header">
                     <i class="fa fa-share-alt"></i>
-                    <h3 class="box-title"><?= __('Related {0}', ['Account Ban']) ?></h3>
+                    <h3 class="box-title"><?= __('Relatos de {0}', ['Contas Banidas']) ?></h3>
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body table-responsive no-padding">
@@ -117,37 +117,37 @@
                             <tr>
                                                                     
                                     <th>
-                                    Id
+                                        <?php echo __('ID'); ?>
                                     </th>
                                         
                                                                     
                                     <th>
-                                    Account Id
+                                        <?php echo __('ID da Conta'); ?>
                                     </th>
                                         
                                                                     
                                     <th>
-                                    Start Time
+                                        <?php echo __('Inicio'); ?>
                                     </th>
                                         
                                                                     
                                     <th>
-                                    End Time
+                                        <?php echo __('Fim'); ?>
                                     </th>
                                         
                                                                     
                                     <th>
-                                    Reason
+                                        <?php echo __('Razão'); ?>
                                     </th>
                                         
                                                                     
                                     <th>
-                                    Expired
+                                        <?php echo __('Expirado?:'); ?>
                                     </th>
                                         
                                                                     
                                 <th>
-                                    <?php echo __('Actions'); ?>
+                                    <?php echo __('Ações'); ?>
                                 </th>
                             </tr>
 
@@ -179,11 +179,10 @@
                                     </td>
                                     
                                                                         <td class="actions">
-                                    <?= $this->Html->link(__('View'), ['controller' => 'AccountBan', 'action' => 'view', $accountBan->id], ['class'=>'btn btn-info btn-xs']) ?>
 
-                                    <?= $this->Html->link(__('Edit'), ['controller' => 'AccountBan', 'action' => 'edit', $accountBan->id], ['class'=>'btn btn-warning btn-xs']) ?>
+                                    <?= $this->Html->link(__('Editar'), ['controller' => 'AccountBan', 'action' => 'edit', $accountBan->id], ['class'=>'btn btn-success btn-xs']) ?>
 
-                                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'AccountBan', 'action' => 'delete', $accountBan->id], ['confirm' => __('Are you sure you want to delete # {0}?', $accountBan->id), 'class'=>'btn btn-danger btn-xs']) ?>    
+                                    <?= $this->Form->postLink(__('Deletar'), ['controller' => 'AccountBan', 'action' => 'delete', $accountBan->id], ['confirm' => __('Are you sure you want to delete # {0}?', $accountBan->id), 'class'=>'btn btn-danger btn-xs']) ?>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
@@ -204,7 +203,7 @@
             <div class="box">
                 <div class="box-header">
                     <i class="fa fa-share-alt"></i>
-                    <h3 class="box-title"><?= __('Related {0}', ['Account Service']) ?></h3>
+                    <h3 class="box-title"><?= __('Relatos de {0}', ['Serviços da Conta']) ?></h3>
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body table-responsive no-padding">
@@ -216,32 +215,32 @@
                             <tr>
                                                                     
                                     <th>
-                                    Account Id
+                                        <?php echo __('ID da Conta:'); ?>
                                     </th>
                                         
                                                                     
                                     <th>
-                                    Service Id
+                                        <?php echo __('Serviço:'); ?>
                                     </th>
                                         
                                                                     
                                     <th>
-                                    Start Time
+                                        <?php echo __('Inicio:'); ?>
                                     </th>
                                         
                                                                     
                                     <th>
-                                    End Time
+                                        <?php echo __('Fim:'); ?>
                                     </th>
                                         
                                                                     
                                     <th>
-                                    Expired
+                                        <?php echo __('Expirado?:'); ?>
                                     </th>
                                         
                                                                     
                                 <th>
-                                    <?php echo __('Actions'); ?>
+                                    <?php echo __('Ações'); ?>
                                 </th>
                             </tr>
 
@@ -269,11 +268,9 @@
                                     </td>
                                     
                                                                         <td class="actions">
-                                    <?= $this->Html->link(__('View'), ['controller' => 'AccountService', 'action' => 'view', $accountService->account_id], ['class'=>'btn btn-info btn-xs']) ?>
+                                    <?= $this->Html->link(__('Editar'), ['controller' => 'AccountService', 'action' => 'edit', $accountService->account_id], ['class'=>'btn btn-success btn-xs']) ?>
 
-                                    <?= $this->Html->link(__('Edit'), ['controller' => 'AccountService', 'action' => 'edit', $accountService->account_id], ['class'=>'btn btn-warning btn-xs']) ?>
-
-                                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'AccountService', 'action' => 'delete', $accountService->account_id], ['confirm' => __('Are you sure you want to delete # {0}?', $accountService->account_id), 'class'=>'btn btn-danger btn-xs']) ?>    
+                                    <?= $this->Form->postLink(__('Deletar'), ['controller' => 'AccountService', 'action' => 'delete', $accountService->account_id], ['confirm' => __('Are you sure you want to delete # {0}?', $accountService->account_id), 'class'=>'btn btn-danger btn-xs']) ?>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>

@@ -1,10 +1,10 @@
 <section class="content-header">
   <h1>
-    <?php echo __('Account Ban'); ?>
+    <?php echo __('Conta Banida/bloqueada'); ?>
   </h1>
   <ol class="breadcrumb">
     <li>
-    <?= $this->Html->link('<i class="fa fa-dashboard"></i> ' . __('Back'), ['action' => 'index'], ['escape' => false])?>
+    <?= $this->Html->link('<i class="fa fa-dashboard"></i> ' . __('Voltar'), ['action' => 'index'], ['escape' => false])?>
     </li>
   </ol>
 </section>
@@ -16,31 +16,31 @@
         <div class="box box-solid">
             <div class="box-header with-border">
                 <i class="fa fa-info"></i>
-                <h3 class="box-title"><?php echo __('Information'); ?></h3>
+                <h3 class="box-title"><?php echo __('Informações:'); ?></h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
                 <dl class="dl-horizontal">
-                                                                                                                <dt><?= __('Reason') ?></dt>
+                                                                                                                <dt><?= __('Razão:') ?></dt>
                                         <dd>
                                             <?= h($accountBan->reason) ?>
                                         </dd>
                                                                                                                                     
                                             
-                                                                                                                                                            <dt><?= __('Account Id') ?></dt>
+                                                                                                                                                            <dt><?= __('Nome da Conta:') ?></dt>
                                 <dd>
-                                    <?= $this->Number->format($accountBan->account_id) ?>
+                                    <?= h($accountBan->account->account) ?>
                                 </dd>
-                                                                                                                <dt><?= __('Expired') ?></dt>
+                                                                                                                <dt><?= __('Expirado?:') ?></dt>
                                 <dd>
                                     <?= $this->Number->format($accountBan->expired) ?>
                                 </dd>
                                                                                                 
-                                                                                                        <dt><?= __('Start Time') ?></dt>
+                                                                                                        <dt><?= __('Data/Hora Inicio:') ?></dt>
                                 <dd>
                                     <?= h($accountBan->start_time) ?>
                                 </dd>
-                                                                                                                    <dt><?= __('End Time') ?></dt>
+                                                                                                                    <dt><?= __('Data/Hora Fim:') ?></dt>
                                 <dd>
                                     <?= h($accountBan->end_time) ?>
                                 </dd>

@@ -81,8 +81,7 @@ class AccountsTable extends Table
 
         $validator
             ->boolean('logged_in')
-            ->requirePresence('logged_in', 'create')
-            ->notEmpty('logged_in');
+            ->allowEmpty('logged_in');
 
         $validator
             ->integer('access_level')
@@ -103,36 +102,27 @@ class AccountsTable extends Table
             ->notEmpty('last_name');
 
         $validator
-            ->requirePresence('location', 'create')
-            ->notEmpty('location');
+            ->allowEmpty('location');
 
         $validator
             ->dateTime('date_created')
-            ->requirePresence('date_created', 'create')
-            ->notEmpty('date_created');
+            ->allowEmpty('date_created');
 
         $validator
             ->dateTime('date_last_login')
-            ->requirePresence('date_last_login', 'create')
-            ->notEmpty('date_last_login');
+            ->allowEmpty('date_last_login');
 
         $validator
-            ->requirePresence('creator_ip', 'create')
-            ->notEmpty('creator_ip');
+            ->allowEmpty('creator_ip');
 
         $validator
-            ->requirePresence('last_ip', 'create')
-            ->notEmpty('last_ip');
+            ->allowEmpty('last_ip');
 
         $validator
-            ->requirePresence('current_ip', 'create')
-            ->notEmpty('current_ip');
+            ->allowEmpty('current_ip');
 
         $validator
-            ->boolean('pin_attempt')
-            ->requirePresence('pin_attempt', 'create')
-            ->notEmpty('pin_attempt');
-
+            ->allowEmpty('pin_attempt');
         return $validator;
     }
 
@@ -146,6 +136,7 @@ class AccountsTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->isUnique(['email']));
+        $rules->add($rules->isUnique(['account']));
 
         return $rules;
     }

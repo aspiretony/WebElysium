@@ -1,7 +1,7 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
-    Accounts
+      <?php echo __('Contas do servidor');  ?>
     <div class="pull-right"><?= $this->Html->link(__('New'), ['action' => 'add'], ['class'=>'btn btn-success btn-xs']) ?></div>
   </h1>
 </section>
@@ -12,7 +12,7 @@
     <div class="col-xs-12">
       <div class="box">
         <div class="box-header">
-          <h3 class="box-title"><?= __('List of') ?> Accounts</h3>
+          <h3 class="box-title"><?= __('Listando contas do servidor') ?> </h3>
           <div class="box-tools">
             <form action="<?php echo $this->Url->build(); ?>" method="POST">
               <div class="input-group input-group-sm"  style="width: 180px;">
@@ -28,28 +28,28 @@
         <div class="box-body table-responsive no-padding">
           <table class="table table-hover">
             <tr>
-              <th><?= $this->Paginator->sort('id') ?></th>
-              <th><?= $this->Paginator->sort('account') ?></th>
-              <th><?= $this->Paginator->sort('password') ?></th>
+              <th><?= $this->Paginator->sort('Conta') ?></th>
+                <th><?= $this->Paginator->sort('Nome') ?></th>
+                <th><?= $this->Paginator->sort('SobreNome') ?></th>
+                <th><?= $this->Paginator->sort('Ultimo IP') ?></th>
               <th><?= $this->Paginator->sort('email') ?></th>
-              <th><?= $this->Paginator->sort('pin') ?></th>
               <th><?= $this->Paginator->sort('cash') ?></th>
-              <th><?= $this->Paginator->sort('logged_in') ?></th>
-              <th><?= __('Actions') ?></th>
+              <th><?= $this->Paginator->sort('logado?') ?></th>
+              <th><?= __('Ações') ?></th>
             </tr>
             <?php foreach ($accounts as $account): ?>
               <tr>
-                <td><?= $this->Number->format($account->id) ?></td>
                 <td><?= h($account->account) ?></td>
-                <td><?= h($account->password) ?></td>
+                <td><?= h($account->first_name) ?></td>
+                  <td><?= h($account->last_name) ?></td>
+                  <td><?= h($account->last_ip) ?></td>
                 <td><?= h($account->email) ?></td>
-                <td><?= h($account->pin) ?></td>
                 <td><?= $this->Number->format($account->cash) ?></td>
                 <td><?= h($account->logged_in) ?></td>
                 <td class="actions" style="white-space:nowrap">
-                  <?= $this->Html->link(__('View'), ['action' => 'view', $account->id], ['class'=>'btn btn-info btn-xs']) ?>
-                  <?= $this->Html->link(__('Edit'), ['action' => 'edit', $account->id], ['class'=>'btn btn-warning btn-xs']) ?>
-                  <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $account->id], ['confirm' => __('Confirm to delete this entry?'), 'class'=>'btn btn-danger btn-xs']) ?>
+                  <?= $this->Html->link(__('Visualizar'), ['action' => 'view', $account->id], ['class'=>'btn btn-info btn-xs']) ?>
+                  <?= $this->Html->link(__('Editar'), ['action' => 'edit', $account->id], ['class'=>'btn btn-warning btn-xs']) ?>
+                  <?= $this->Form->postLink(__('Deletar Conta'), ['action' => 'delete', $account->id], ['confirm' => __('Confirm to delete this entry?'), 'class'=>'btn btn-danger btn-xs']) ?>
                 </td>
               </tr>
             <?php endforeach; ?>

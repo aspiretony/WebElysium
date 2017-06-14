@@ -1,8 +1,8 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
-    Account Service
-    <div class="pull-right"><?= $this->Html->link(__('New'), ['action' => 'add'], ['class'=>'btn btn-success btn-xs']) ?></div>
+      <?= __('Serviços de Conta') ?>
+    <div class="pull-right"><?php // echo $this->Html->link(__('Novo'), ['action' => 'add'], ['class'=>'btn btn-success btn-xs']) ?></div>
   </h1>
 </section>
 
@@ -12,7 +12,7 @@
     <div class="col-xs-12">
       <div class="box">
         <div class="box-header">
-          <h3 class="box-title"><?= __('List of') ?> Account Service</h3>
+          <h3 class="box-title"><?= __('Lista do serviço de contas') ?> </h3>
           <div class="box-tools">
             <form action="<?php echo $this->Url->build(); ?>" method="POST">
               <div class="input-group input-group-sm"  style="width: 180px;">
@@ -28,11 +28,11 @@
         <div class="box-body table-responsive no-padding">
           <table class="table table-hover">
             <tr>
-              <th><?= $this->Paginator->sort('account_id') ?></th>
-              <th><?= $this->Paginator->sort('service_id') ?></th>
-              <th><?= $this->Paginator->sort('start_time') ?></th>
-              <th><?= $this->Paginator->sort('end_time') ?></th>
-              <th><?= $this->Paginator->sort('expired') ?></th>
+              <th><?= $this->Paginator->sort('Conta') ?></th>
+              <th><?= $this->Paginator->sort('Serviço') ?></th>
+              <th><?= $this->Paginator->sort('Inicio') ?></th>
+              <th><?= $this->Paginator->sort('Fim') ?></th>
+              <th><?= $this->Paginator->sort('expirado?') ?></th>
               <th><?= __('Actions') ?></th>
             </tr>
             <?php foreach ($accountService as $accountService): ?>
@@ -43,9 +43,9 @@
                 <td><?= h($accountService->end_time) ?></td>
                 <td><?= $this->Number->format($accountService->expired) ?></td>
                 <td class="actions" style="white-space:nowrap">
-                  <?= $this->Html->link(__('View'), ['action' => 'view', $accountService->account_id], ['class'=>'btn btn-info btn-xs']) ?>
-                  <?= $this->Html->link(__('Edit'), ['action' => 'edit', $accountService->account_id], ['class'=>'btn btn-warning btn-xs']) ?>
-                  <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $accountService->account_id], ['confirm' => __('Confirm to delete this entry?'), 'class'=>'btn btn-danger btn-xs']) ?>
+                 Em Breve <?php // echo  $this->Html->link(__('View'), ['action' => 'view', $accountService->account_id], ['class'=>'btn btn-info btn-xs']) ?>
+                  <?php // echo $this->Html->link(__('Edit'), ['action' => 'edit', $accountService->account_id], ['class'=>'btn btn-warning btn-xs']) ?>
+                  <?php // echo $this->Form->postLink(__('Delete'), ['action' => 'delete', $accountService->account_id], ['confirm' => __('Confirm to delete this entry?'), 'class'=>'btn btn-danger btn-xs']) ?>
                 </td>
               </tr>
             <?php endforeach; ?>

@@ -20,6 +20,6 @@ if (file_exists($file)) {
                 <li><a href="<?php echo $this->Url->build('/admin/banned-ip'); ?>"><i class="fa fa-circle-o"></i> Banir IP</a></li>
             </ul>
         </li>
-        <li><a href="<?php echo $this->Url->build('/pages/debug'); ?>"><i class="fa fa-bug"></i> Debug</a></li>
+        <li><a href="<?php echo $this->Url->build('/admin/pages/debug'); ?>"><i class="fa fa-bug"></i> Debug</a></li>
     </ul>
 <?php } ?>

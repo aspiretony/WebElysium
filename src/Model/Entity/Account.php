@@ -51,6 +51,7 @@ class Account extends Entity
      * @var array
      */
     protected $_hidden = [
-        'password'
+        'password',
+        'pin'
     ];
 }
