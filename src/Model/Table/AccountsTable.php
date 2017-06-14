@@ -34,7 +34,7 @@ class AccountsTable extends Table
         parent::initialize($config);
 
         $this->setTable('accounts');
-        $this->setDisplayField('id');
+        $this->setDisplayField('account');
         $this->setPrimaryKey('id');
 
         $this->hasMany('AccountBan', [
