@@ -3,11 +3,11 @@ $baseDir = dirname(dirname(__FILE__));
 return [
     'plugins' => [
         'AdminLTE' => $baseDir . '/vendor/maiconpinto/cakephp-adminlte-theme/',
+        'Aff' => $baseDir . '/plugins/Aff/',
         'Bake' => $baseDir . '/vendor/cakephp/bake/',
         'DebugKit' => $baseDir . '/vendor/cakephp/debug_kit/',
         'Migrations' => $baseDir . '/vendor/cakephp/migrations/',
-        'Temao' => $baseDir . '/plugins/Temao/',
-        'ThemeSorcerer' => $baseDir . '/plugins/ThemeSorcerer/',
-        'tema' => $baseDir . '/plugins/tema/'
+        'Player' => $baseDir . '/plugins/Player/',
+        'Sorcerer' => $baseDir . '/plugins/Sorcerer/'
     ]
 ];

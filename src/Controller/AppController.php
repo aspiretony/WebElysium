@@ -44,6 +44,27 @@ class AppController extends Controller
 
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
+        $this->loadComponent('Auth', [
+            'authorize' => 'Controller',
+            'userModel' => 'Accounts',
+
+            // 'loginAction' => [
+            //   'controller' => 'Account',
+            //     'action' => 'login',
+
+            'authenticate' => [
+
+                'Form' => [
+                    'userModel' => 'Account.Account',
+                    'fields' => ['username' => 'account', 'password' => 'password',
+                        'passwordHasher' => 'sha256',
+
+                    ]
+                ]
+            ]
+
+            //  ]
+        ]); //LEMBRAR DE ATIVAR AO TERMINAR
 
         /*
          * Enable the following components for recommended CakePHP security settings.
@@ -62,6 +83,7 @@ class AppController extends Controller
     public function beforeRender(Event $event)
     {
 
+        $this->set('authconta', $this->Auth->user());
         $this->set('theme', Configure::read('Theme'));
 
         if (!array_key_exists('_serialize', $this->viewVars) &&
@@ -70,11 +92,29 @@ class AppController extends Controller
             $this->set('_serialize', true);
         }
 
-        $this->viewBuilder()->theme('ThemeSorcerer');
+        $this->viewBuilder()->theme('Sorcerer');
+
        // se o prefixo tiver admin use o tema da administração
       if ($this->request->getParam('prefix') === 'admin')
        {
            $this->viewBuilder()->theme('AdminLTE');
        }
+
+
+    }
+    public function isAuthorized($user = null)
+    {
+        // Any registered user can access public functions
+        if (!$this->request->getParam('prefix')) {
+            return true;
+        }
+
+        // Only admins can access admin functions
+        if ($this->request->getParam('prefix') === 'admin') {
+            return (bool)($user['access_level'] > 2);
+        }
+
+        // Default deny
+        return false;
     }
 }

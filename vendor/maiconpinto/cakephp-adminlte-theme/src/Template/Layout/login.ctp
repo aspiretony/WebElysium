@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title><?php echo isset($theme['title']) ? $theme['title'] : 'AdminLTE 2 | Log in'; ?></title>
+  <title>Administração</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.5 -->
@@ -26,9 +26,6 @@
 </head>
 <body class="hold-transition login-page">
 <div class="login-box">
-  <div class="login-logo">
-    <a href="<?php echo $this->Url->build(array('controller' => 'pages', 'action' => 'display', 'home')); ?>"><?php echo $theme['logo']['large'] ?></a>
-  </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
     <p class="login-box-msg"><?php echo __('Sign in to start your session') ?></p>
@@ -37,17 +34,6 @@
 
 <?php echo $this->fetch('content'); ?>
 
-    <?php
-    if (isset($theme['login']['show_social']) && $theme['login']['show_social']) {
-        ?>
-        <div class="social-auth-links text-center">
-          <p>- <?php echo __('OR') ?> -</p>
-          <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> <?php echo __('Sign in using Facebook') ?></a>
-          <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> <?php echo __('Sign in using Google+') ?></a>
-        </div>
-        <?php
-    }
-    ?>
 
     <?php
     if (isset($theme['login']['show_remember']) && $theme['login']['show_remember']) {

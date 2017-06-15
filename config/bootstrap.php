@@ -236,5 +236,5 @@ Configure::write('Theme', [
     ],
     'folder' => ROOT
 ]);
-Plugin::load('ThemeSorcerer', ['bootstrap' => false, 'routes' => true]);
 
+Plugin::load('Sorcerer', ['autoload' => true, 'bootstrap' => false, 'routes' => true]);

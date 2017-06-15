@@ -2,7 +2,8 @@
 namespace App\Model\Entity;
 
 use Cake\ORM\Entity;
-
+use Cake\Auth\DefaultPasswordHasher;
+use Cake\Auth\AbstractPasswordHasher;
 /**
  * Account Entity
  *
@@ -28,6 +29,20 @@ use Cake\ORM\Entity;
  * @property \App\Model\Entity\AccountBan[] $account_ban
  * @property \App\Model\Entity\AccountService[] $account_service
  */
+class LegacyPasswordHasher extends AbstractPasswordHasher
+{
+
+    public function hash($password)
+    {
+        return hash('sha256', $password);
+    }
+
+    public function check($password, $hashedPassword)
+    {
+        return hash('sha256', $password) === $hashedPassword;
+    }
+}
+
 class Account extends Entity
 {
 
@@ -54,4 +69,19 @@ class Account extends Entity
         'password',
         'pin'
     ];
+
+    protected function _setPin($pin)
+    {
+        {
+            if (strlen($pin) > 0) {
+                return (new LegacyPasswordHasher)->hash($pin);
+            }
+        }
+    }
+    protected function _setPassword($password)
+    {
+        if (strlen($password) > 0) {
+            return (new LegacyPasswordHasher)->hash($password);
+        }
+    }
 }

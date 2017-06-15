@@ -130,11 +130,6 @@ class ControllerTask extends BakeTask
         $singularName = $this->_singularName($currentModelName);
         $singularHumanName = $this->_singularHumanName($controllerName);
         $pluralHumanName = $this->_variableName($controllerName);
-
-        $defaultModel = sprintf('%s\Model\Table\%sTable', $namespace, $controllerName);
-        if (!class_exists($defaultModel)) {
-            $defaultModel = null;
-        }
         $entityClassName = $this->_entityName($modelObj->getAlias());
 
         $data = compact(
@@ -142,7 +137,6 @@ class ControllerTask extends BakeTask
             'admin',
             'components',
             'currentModelName',
-            'defaultModel',
             'entityClassName',
             'helpers',
             'modelObj',

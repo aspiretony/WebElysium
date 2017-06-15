@@ -45,5 +45,7 @@ return array(
     'Aura\\Intl\\' => array($vendorDir . '/aura/intl/src'),
     'App\\Test\\' => array($baseDir . '/tests'),
     'App\\' => array($baseDir . '/src'),
+    'Aff\\Test\\' => array($baseDir . '/plugins/Aff/tests'),
+    'Aff\\' => array($baseDir . '/plugins/Aff/src'),
     'AdminLTE\\' => array($vendorDir . '/maiconpinto/cakephp-adminlte-theme/src'),
 );

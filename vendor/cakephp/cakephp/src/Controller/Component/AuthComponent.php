@@ -54,6 +54,7 @@ class AuthComponent extends Component
      */
     const ALL = 'all';
 
+
     /**
      * Default config
      *
@@ -154,6 +155,9 @@ class AuthComponent extends Component
      *
      * @var array
      */
+
+
+
     protected $_defaultConfig = [
         'authenticate' => null,
         'authorize' => null,
@@ -478,6 +482,7 @@ class AuthComponent extends Component
      *
      * @return void
      */
+
     protected function _setDefaults()
     {
         $defaults = [
@@ -488,7 +493,7 @@ class AuthComponent extends Component
                 'params' => ['class' => 'error']
             ],
             'loginAction' => [
-                'controller' => 'Users',
+                'controller' => 'Accounts',
                 'action' => 'login',
                 'plugin' => null
             ],

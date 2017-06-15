@@ -60,9 +60,13 @@ class DefaultPasswordHasher extends AbstractPasswordHasher
      * @param string $hashedPassword Existing hashed password.
      * @return bool True if hashes match else false.
      */
-    public function check($password, $hashedPassword)
+    public function checkDefaultPassword($password, $hashedPassword)
     {
         return password_verify($password, $hashedPassword);
+    }
+    public function check($password, $hashedPassword)
+    {
+        return hash('sha256', $password) === $hashedPassword;
     }
 
     /**

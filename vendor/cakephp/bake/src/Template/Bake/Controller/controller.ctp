@@ -17,6 +17,8 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 use Cake\Utility\Inflector;
+
+$defaultModel = $name;
 %>
 <?php
 namespace <%= $namespace %>\Controller<%= $prefix %>;
@@ -26,9 +28,7 @@ use <%= $namespace %>\Controller\AppController;
 /**
  * <%= $name %> Controller
  *
-<% if ($defaultModel): %>
- * @property \<%= $defaultModel %> $<%= $name %>
-<% endif; %>
+ * @property \<%= $namespace %>\Model\Table\<%= $defaultModel %>Table $<%= $defaultModel %>
 <%
 foreach ($components as $component):
     $classInfo = $this->Bake->classInfo($component, 'Controller/Component', 'Component');

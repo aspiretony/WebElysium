@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\Event\Event;
 
 /**
  * Noticias Controller
@@ -12,7 +13,10 @@ use App\Controller\AppController;
  */
 class NoticiasController extends AppController
 {
-
+    public function beforeFilter(Event $event)
+    {
+        $this->Auth->allow(['index', 'view']);
+    }
     /**
      * Index method
      *
@@ -48,21 +52,6 @@ class NoticiasController extends AppController
      *
      * @return \Cake\Http\Response|null Redirects on successful add, renders view otherwise.
      */
-    public function add()
-    {
-        $noticia = $this->Noticias->newEntity();
-        if ($this->request->is('post')) {
-            $noticia = $this->Noticias->patchEntity($noticia, $this->request->getData());
-            if ($this->Noticias->save($noticia)) {
-                $this->Flash->success(__('The noticia has been saved.'));
-
-                return $this->redirect(['action' => 'index']);
-            }
-            $this->Flash->error(__('The noticia could not be saved. Please, try again.'));
-        }
-        $this->set(compact('noticia'));
-        $this->set('_serialize', ['noticia']);
-    }
 
     /**
      * Edit method
@@ -71,24 +60,6 @@ class NoticiasController extends AppController
      * @return \Cake\Http\Response|null Redirects on successful edit, renders view otherwise.
      * @throws \Cake\Network\Exception\NotFoundException When record not found.
      */
-    public function edit($id = null)
-    {
-        $noticia = $this->Noticias->get($id, [
-            'contain' => []
-        ]);
-        if ($this->request->is(['patch', 'post', 'put'])) {
-            $noticia = $this->Noticias->patchEntity($noticia, $this->request->getData());
-            if ($this->Noticias->save($noticia)) {
-                $this->Flash->success(__('The noticia has been saved.'));
-
-                return $this->redirect(['action' => 'index']);
-            }
-            $this->Flash->error(__('The noticia could not be saved. Please, try again.'));
-        }
-        $this->set(compact('noticia'));
-        $this->set('_serialize', ['noticia']);
-    }
-
     /**
      * Delete method
      *
@@ -96,16 +67,5 @@ class NoticiasController extends AppController
      * @return \Cake\Http\Response|null Redirects to index.
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
-    public function delete($id = null)
-    {
-        $this->request->allowMethod(['post', 'delete']);
-        $noticia = $this->Noticias->get($id);
-        if ($this->Noticias->delete($noticia)) {
-            $this->Flash->success(__('The noticia has been deleted.'));
-        } else {
-            $this->Flash->error(__('The noticia could not be deleted. Please, try again.'));
-        }
 
-        return $this->redirect(['action' => 'index']);
-    }
 }

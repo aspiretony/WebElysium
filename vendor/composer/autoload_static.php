@@ -89,6 +89,8 @@ class ComposerStaticInit4d5b67f0701678c5c7a43db2e037f7f2
             'Aura\\Intl\\' => 10,
             'App\\Test\\' => 9,
             'App\\' => 4,
+            'Aff\\Test\\' => 9,
+            'Aff\\' => 4,
             'AdminLTE\\' => 9,
         ),
     );
@@ -249,6 +251,14 @@ class ComposerStaticInit4d5b67f0701678c5c7a43db2e037f7f2
         'App\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
+        ),
+        'Aff\\Test\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/plugins/Aff/tests',
+        ),
+        'Aff\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/plugins/Aff/src',
         ),
         'AdminLTE\\' => 
         array (
