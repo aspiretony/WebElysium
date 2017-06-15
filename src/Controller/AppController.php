@@ -55,7 +55,7 @@ class AppController extends Controller
             'authenticate' => [
 
                 'Form' => [
-                    'userModel' => 'Account.Account',
+                    'userModel' => 'Accounts',
                     'fields' => ['username' => 'account', 'password' => 'password',
                         'passwordHasher' => 'sha256',
 
