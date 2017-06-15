@@ -263,7 +263,7 @@ return [
         /**
          * The test connection is used during the test suite.
          */
-        'default2' => [
+        'gs' => [
             'className' => 'Cake\Database\Connection',
             'driver' => 'Cake\Database\Driver\Mysql',
             'persistent' => false,
@@ -272,6 +272,23 @@ return [
             'username' => 'root',
             'password' => '',
             'database' => 'elysium_gs',
+            'encoding' => 'utf8',
+            'timezone' => 'UTC',
+            'cacheMetadata' => true,
+            'quoteIdentifiers' => false,
+            'log' => false,
+            //'init' => ['SET GLOBAL innodb_stats_on_metadata = 0'],
+            'url' => env('DATABASE_TEST_URL', null),
+        ],
+        'site' => [
+            'className' => 'Cake\Database\Connection',
+            'driver' => 'Cake\Database\Driver\Mysql',
+            'persistent' => false,
+            'host' => 'localhost',
+            //'port' => 'non_standard_port_number',
+            'username' => 'root',
+            'password' => '',
+            'database' => 'elysium_site',
             'encoding' => 'utf8',
             'timezone' => 'UTC',
             'cacheMetadata' => true,

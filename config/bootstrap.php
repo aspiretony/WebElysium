@@ -236,3 +236,5 @@ Configure::write('Theme', [
     ],
     'folder' => ROOT
 ]);
+Plugin::load('ThemeSorcerer', ['bootstrap' => false, 'routes' => true]);
+

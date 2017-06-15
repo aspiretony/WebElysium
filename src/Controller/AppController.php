@@ -61,6 +61,7 @@ class AppController extends Controller
      */
     public function beforeRender(Event $event)
     {
+
         $this->set('theme', Configure::read('Theme'));
 
         if (!array_key_exists('_serialize', $this->viewVars) &&
@@ -69,6 +70,7 @@ class AppController extends Controller
             $this->set('_serialize', true);
         }
 
+        $this->viewBuilder()->theme('ThemeSorcerer');
        // se o prefixo tiver admin use o tema da administração
       if ($this->request->getParam('prefix') === 'admin')
        {

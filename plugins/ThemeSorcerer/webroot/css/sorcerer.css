@@ -1,0 +1,423 @@
+﻿@charset "utf-8";
+body  {
+    	font: 100% Verdana, Arial, Helvetica, sans-serif;
+    	background: #18140c;
+    	margin: 0; /* es recomendable ajustar a cero el margen y el relleno del elemento body para lograr la compatibilidad con la configuración predeterminada de los diversos navegadores */
+    	padding: 0;
+    	text-align: center; /* esto centra el contenedor en los navegadores IE 5*. El texto se ajusta posteriormente con el valor predeterminado de alineación a la izquierda en el selector #container */
+    }
+    
+    /* Sugerencias para diseños elásticos 
+    1. Dado que el tamaño global de los diseños elásticos se basa en el tamaño de fuente predeterminado del usuario, resultan algo más impredecibles. Si se utilizan correctamente, también son más accesibles para aquellas personas que necesitan tamaños de fuentes más grandes, dado que la longitud de línea mantiene la proporcionalidad.
+    2. La asignación de tamaño a los divs en este diseño se basa en el 100% del tamaño de fuente en el elemento body. Si reduce el tamaño global del texto empleando font-size: 80% en el elemento body o el #container, recuerde que todo el diseño reducirá su tamaño proporcionalmente. Es posible que le interese aumentar los anchos de los diversos divs para compensar este efecto.
+    3. Si la asignación de tamaño de fuente se modifica de forma distinta en cada div en lugar de hacerse en el diseño global (es decir: a #sidebar1 se le asigna un 70% de tamaño de fuente y a #mainContent se le asigna un 85% de tamaño de fuente), ello hará que se modifique proporcionalmente el tamaño global de cada uno de los divs. Si lo desea, puede realizar el ajuste basándose en la asignación de tamaño de fuente final.
+    */
+    .thrColElsHdr #container { 
+    	width: 1000px;  /* este ancho creará un contenedor que cabrá en una ventana de navegador 800px si el texto se deja con los tamaños de fuente predeterminados del navegador */
+    	margin: 0 auto; /* los márgenes automáticos (conjuntamente con un ancho) centran la página */
+    	text-align: left; /* esto anula text-align: center en el elemento body. */
+    } 
+	#positionall {
+		position: relative;
+		bottom: 27px;
+		left: 20px;
+		}
+    .thrColElsHdr #header { 
+		width: 1000px;
+		height: 364px;
+		background: url(../img/background.jpg);
+    	padding: 0 10px;
+    } 
+	#topinfo {
+	background: url(../img/topinfo.png);
+	width: 657px;
+	height: 71px;
+	position: relative;
+	left: 160px;
+	}
+	#servername {
+	background: url(../img/header.png);
+	width: 355px;
+	height: 76px;
+	position: relative;
+	left: 500px;
+	top: 110px;
+	}
+    .thrColElsHdr #header h1 {
+    	margin: 0;
+    	padding: 10px 0;
+    }
+    .thrColElsHdr #sidebar1 {
+    	float: left; 
+    	width: 11em; /* dado que este elemento es flotante, debe asignarse un ancho */
+    	padding: 15px 0;
+    }
+	#searchpanel {
+		background: url(../img/searchpanel.png);
+		width: 210px;
+		float: left;
+		height: 104px;
+		position: relative;
+		left: 10px;
+	}
+	#searchbox {
+		position: relative;
+		top: 40px;
+	}
+	.searchbutton {
+		background: url(../img/searchbutton.png);
+		width: 77px;
+		height: 28px;
+		border: 0px;
+	}
+	.input {
+		background: url(../img/input.png);
+		width: 165px;
+		height: 23px;
+		border: 0px;
+		font: Tahoma;
+		color: #2d281e;
+		font-size: 13px;
+		text-align: center;
+		}
+	#menuleft {
+		background: url(../img/menuback.png);
+		float: left;
+		width: 227px;
+		height: 534px;
+		position: relative;
+		top: 65px;
+		right: 9px;
+	}
+	#menuback {
+		background: url(../img/menus.png);
+		width: 213px;
+		height: 25px;
+	}
+	#menuback a:link {
+		font: Tahoma;
+		font-size: 12px;
+		color: #5b503d;
+		text-shadow: #100e0b 1px 1px, 0px 0px;
+		position: relative;
+		top: 4px;
+	}
+	#menuback a:visited {
+		font: Tahoma;
+		font-size: 12px;
+		color: #5b503d;
+		text-shadow: #100e0b 1px 1px, 0px 0px;
+	}
+	#menuback a:hover {
+		font: Tahoma;
+		font-size: 12px;
+		color: #72654c;
+		text-shadow: #100e0b 1px 1px, 0px 0px;
+	}
+	#menuback a:active {
+		font: Tahoma;
+		font-size: 12px;
+		color: #5b503d;
+		text-shadow: #100e0b 1px 1px, 0px 0px;
+	}
+	#menuposition {
+		position: relative;
+		top: 7px;
+	}
+    .thrColElsHdr #sidebar2 {
+    	float: right; 
+    	width: 11em;
+    	padding: 15px 0;
+		position: relative;
+		right: 75px;
+    }
+	#loginpanel {
+		background: url(../img/loginpanel.png);
+		width: 210px;
+		height: 128px;
+	} 
+	#loginbox {
+		position: relative;
+		top: 40px;
+		left: 20px;
+	}	
+	#loginbox a:link{
+		font: Tahoma;
+		font-size: 10px;
+		color: #423b2f;
+		text-shadow: #100e0b 1px 1px, 0px 0px;
+		text-decoration: underline;
+	}	
+	#loginbox a:visited{
+		font: Tahoma;
+		font-size: 10px;
+		color: #423b2f;
+		text-shadow: #100e0b 1px 1px, 0px 0px;
+		text-decoration: underline;
+	}	
+	#loginbox a:hover{
+		font: Tahoma;
+		font-size: 10px;
+		color: #564d3e;
+		text-shadow: #100e0b 1px 1px, 0px 0px;
+		text-decoration: underline;
+	}	
+	#loginbox a:active{
+		font: Tahoma;
+		font-size: 10px;
+		color: #423b2f;
+		text-shadow: #100e0b 1px 1px, 0px 0px;
+		text-decoration: underline;
+	}
+	.loginbutton {
+		background: url(../img/loginbutton.png);
+		width: 62px;
+		height: 28px;
+		border: 0px;
+	}
+
+	#joinusback {
+		background: url(../img/joinback.png);
+		width: 232px;
+		height: 182px;
+		position: relative;
+		top: 36px;
+	}
+	#joinusbutton {
+		position: relative;
+		top: 55px;
+		left: 7px;
+	}
+	#highscorespanel {
+		background: url(../img/highscoresback.png);
+		width: 210px;
+		height: 239px;
+		position: relative;
+		top: 145px;
+	}
+	#topplayers {
+		font: Tahoma;
+		font-size: 12px;
+		color: #4f4534;
+		text-shadow: #100e0b 1px 1px, 0px 0px;
+		position: relative;
+		top: 55px;
+		left: 20px;
+	}
+	#playerslevel {
+		font: Tahoma;
+		font-size: 12px;
+		color: #4f4534;
+		text-shadow: #100e0b 1px 1px, 0px 0px;
+		position: relative;
+		top: 40px;
+		left: 30px;
+		}
+	#topplayers2 {
+		font: Tahoma;
+		font-size: 12px;
+		color: #4f4534;
+		text-shadow: #100e0b 1px 1px, 0px 0px;
+		position: relative;
+		top: 55px;
+		left: 20px;
+	}
+	#topplayers a:link{
+		font: Tahoma;
+		font-size: 12px;
+		color: #4f4534;
+		text-shadow: #100e0b 1px 1px, 0px 0px;
+	}
+	#topplayers a:visited{
+		font: Tahoma;
+		font-size: 12px;
+		color: #4f4534;
+		text-shadow: #100e0b 1px 1px, 0px 0px;
+	}
+	#topplayers a:hover{
+		font: Tahoma;
+		font-size: 12px;
+		color: #615540;
+		text-shadow: #100e0b 1px 1px, 0px 0px;
+	}
+	#topplayers a:active{
+		font: Tahoma;
+		font-size: 12px;
+		color: #4f4534;
+		text-shadow: #100e0b 1px 1px, 0px 0px;
+	}
+    .thrColElsHdr #sidebar1 h3, .thrColElsHdr #sidebar1 p, .thrColElsHdr #sidebar2 p, .thrColElsHdr #sidebar2 h3 {
+    	margin-left: 10px;
+    	margin-right: 10px;
+    }
+    .thrColElsHdr #mainContent {
+		width: 500px;
+		float: left;
+		position: relative;
+		left: 60px;
+    } 
+	#contenttop {
+		background: url(../img/contenttop.png);
+		width: 500px;
+		height: 130px;
+	}
+	#contentbot {
+		background: url(../img/contentbot.png);
+		width: 500px;
+	}
+	#realcontent {
+		width: 470px;
+		position: relative;
+		bottom: 80px;
+		padding: 0px 0px 0px 20px;
+		font: Tahoma;
+		font-size: 12px;
+		color: #4f4534;
+		text-shadow: #100e0b 1px 1px, 0px 0px;
+		}
+	#realcontent a:link {
+		font: Tahoma;
+		font-size: 12px;
+		color: #4f4534;
+		text-shadow: #100e0b 1px 1px, 0px 0px;
+		text-decoration: underline;
+		}
+		#realcontent a:visited {
+		font: Tahoma;
+		font-size: 12px;
+		color: #4f4534;
+		text-shadow: #100e0b 1px 1px, 0px 0px;
+		text-decoration: underline;
+		}
+		#realcontent a:hover {
+		font: Tahoma;
+		font-size: 12px;
+		color: #5e523e;
+		text-shadow: #100e0b 1px 1px, 0px 0px;
+		text-decoration: underline;
+		}
+		#realcontent a:active {
+		font: Tahoma;
+		font-size: 12px;
+		color: #4f4534;
+		text-shadow: #100e0b 1px 1px, 0px 0px;
+		text-decoration: underline;
+		}
+	#leftinfo {
+	font: Tahoma;
+	font-size: 11px;
+	color: #4a412e;
+	text-shadow: #0e0c09 1px 1px, 0px 0px;
+	position: relative;
+	top: 9px;
+	left: 12px;
+	}
+	#rightinfo {
+	font: Tahoma;
+	font-size: 11px;
+	color: #4a412e;
+	text-shadow: #0e0c09 1px 1px, 0px 0px;
+	position: relative;
+	bottom: 4px;
+	left: 430px;
+	}
+	#playersonline {
+	font: Tahoma;
+	font-size: 11px;
+	color: #252017;
+	position: relative;
+	text-shadow: #5f543d 1px 1px, 0px 0px;
+	}
+	#vt_content .message .title, #vt_content .news .newsTitle {
+	width: 500;
+	height: 36;
+	padding: 0px 10px 10px 10px;
+	color: #5b503e;
+	background: none;
+	font-family: Times New Roman;
+	font-size: 18px;
+	text-align: center;
+	font-variant: small-caps;
+	font-weight: bold;
+	border: 0px;
+	text-shadow: #000000 1px 1px, 0px 0px;
+}
+	#contentbottom {
+		background: url(img/contentbottom.png);
+		width: 500px;
+		height: 11px;
+	}
+    .thrColElsHdr #footer { 
+    	padding: 0 10px;
+		font: Tahoma;
+		font-size: 12px;
+		color: #373024;
+		text-shadow: #110f0b 1px 1px, 0px 0px;
+    } 
+	#footer { 
+    	padding: 0 10px;
+		font: Tahoma;
+		font-size: 12px;
+		color: #E8E8E8;
+		text-shadow: #110f0b 1px 1px, 0px 0px;
+    } 
+	#footer a:link{ 
+		font: Tahoma;
+		font-size: 12px;
+		color: #373024;
+		text-shadow: #110f0b 1px 1px, 0px 0px;
+		text-decoration: underline;
+    } 
+	#footer a:visited{ 
+		font: Tahoma;
+		font-size: 12px;
+		color: #373024;
+		text-shadow: #110f0b 1px 1px, 0px 0px;
+		text-decoration: underline;
+    } 
+	#footer a:hover{ 
+		font: Tahoma;
+		font-size: 12px;
+		color: #4b4131;
+		text-shadow: #110f0b 1px 1px, 0px 0px;
+		text-decoration: underline;
+    } 
+	#footer a:active{ 
+		font: Tahoma;
+		font-size: 12px;
+		color: #373024;
+		text-shadow: #110f0b 1px 1px, 0px 0px;
+		text-decoration: underline;
+    } 
+    .thrColElsHdr #footer p {
+    	margin: 0; 
+    	padding: 10px 0;
+    }
+    .fltrt {
+    	float: right;
+    	margin-left: 8px;
+    }
+    .fltlft {
+    	float: left;
+    	margin-right: 8px;
+    }
+    .clearfloat {
+    	clear:both;
+        height:0;
+        font-size: 1px;
+        line-height: 0px;
+    }
+a:link {
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+a:active {
+	text-decoration: none;
+}
+/* CSS Document */
+

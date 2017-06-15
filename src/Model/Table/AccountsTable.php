@@ -76,8 +76,7 @@ class AccountsTable extends Table
 
         $validator
             ->integer('cash')
-            ->requirePresence('cash', 'create')
-            ->notEmpty('cash');
+            ->allowEmpty('cash');
 
         $validator
             ->boolean('logged_in')
@@ -85,13 +84,11 @@ class AccountsTable extends Table
 
         $validator
             ->integer('access_level')
-            ->requirePresence('access_level', 'create')
-            ->notEmpty('access_level');
+            ->allowEmpty('access_level');
 
         $validator
             ->boolean('active')
-            ->requirePresence('active', 'create')
-            ->notEmpty('active');
+            ->allowEmpty('active');
 
         $validator
             ->requirePresence('first_name', 'create')

@@ -26,6 +26,13 @@ class ComposerStaticInit4d5b67f0701678c5c7a43db2e037f7f2
         array (
             'XdgBaseDir\\' => 11,
         ),
+        'T' => 
+        array (
+            'ThemeSorcerer\\Test\\' => 19,
+            'ThemeSorcerer\\' => 14,
+            'Temao\\Test\\' => 11,
+            'Temao\\' => 6,
+        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Mbstring\\' => 26,
@@ -94,6 +101,22 @@ class ComposerStaticInit4d5b67f0701678c5c7a43db2e037f7f2
         'XdgBaseDir\\' => 
         array (
             0 => __DIR__ . '/..' . '/dnoegel/php-xdg-base-dir/src',
+        ),
+        'ThemeSorcerer\\Test\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/plugins/ThemeSorcerer/tests',
+        ),
+        'ThemeSorcerer\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/plugins/ThemeSorcerer/src',
+        ),
+        'Temao\\Test\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/plugins/Temao/tests',
+        ),
+        'Temao\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/plugins/Temao/src',
         ),
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (
