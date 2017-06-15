@@ -67,7 +67,7 @@
                 ]); ?>
                     <input type="text" name="account" value="" class="input" />
                     <input type="password" name="password" value="" class="input" /><br />
-                    <table width="200" border="0" cellpadding="0" cellspacing="0">
+                    <table width="201" border="0" cellpadding="0" cellspacing="0">
                         <tr>
                             <td width="67"><input type="submit" class="loginbutton" value="" /></td>
                             <td width="133"><a href="">se vc perdeu sua conta click aqui!</a></td>
