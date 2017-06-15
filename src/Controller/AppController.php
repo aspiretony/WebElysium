@@ -82,7 +82,7 @@ class AppController extends Controller
      */
     public function beforeRender(Event $event)
     {
-
+        $this->loadComponent('Auth');
         $this->set('authconta', $this->Auth->user());
         $this->set('theme', Configure::read('Theme'));
 
